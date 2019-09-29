@@ -6,9 +6,9 @@ A Kind of CSS way to define breakpoints in your Flutter layout
 This project has been built thinking an easy and less verbose possible way to get the breakpoints defined in CSS on Flutter.
 With this project you can define sizes, which your app will rebuild the view to get the most responsible layout for current size 
 
-An basic example: 
+**basic example** 
 
-![Portrait -> Landscape](/preview.png?raw=true "Portrait to landscape")
+![Portrait -> Landscape](/example-preview.png?raw=true "Portrait to landscape")
 
 ## Why
 Design responsive layouts it shouldn't be hard! Specially for who come from web, which there is easiest way: defining CSS breakpoints.
