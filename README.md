@@ -31,5 +31,46 @@ dependencies:
 ```
 
 ## How to use
+1. Import the package where you'll need to rebuild your widget according with breakpoint
+2. (Optional) Use children prop to reuse the common Widget that exists between the layouts
+3. Define the list of breakpoints
+4. Define **in same order** the responsible builder for each breakpoint defined before
 
-WIP...
+```dart
+import 'package:responsive_builder/responsive_builder.dart';
+
+class Example extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ResponsiveBuilder(
+      children: <Widget>[
+        Text('Text 1'),
+        Text('Text 2'),
+        Text('Text 3'),
+      ],
+      breakpoints: [
+        ResponsiveBreakpoint.byPortraitMode(), // index: 0
+        ResponsiveBreakpoint.byLandscapeMode(), // index: 1
+      ],
+      builders: [
+        (context, children) => Column(children: children,), // index 0: portrait
+        (context, children) => Row(children: children,), // // index 1: landscape
+      ],
+    );
+  }
+}
+```
+
+## Breakpoints
+Currently, these are the constructors available to make your layout responsible
+
+| Method | Description |
+|--|--|
+| `ResponsiveBreakpoint.byPortraitMode();` | Rebuild when device is on portrait mode |
+| `ResponsiveBreakpoint.byLandscapeMode();` | Rebuild when device is on landscape mode |
+| `ResponsiveBreakpoint.byMinHeight();` | Rebuild when screen have the minimum height specified | 
+| `ResponsiveBreakpoint.byMinWidth();` | Rebuild when screen have the minimum width specified |
+| `ResponsiveBreakpoint.byMaxHeight();` | Rebuild when screen have the maximum height specified | 
+| `ResponsiveBreakpoint.byManWidth();` | Rebuild when screen have the maximum width specified |
+
+Or use `ResponsiveBreakpoint()` to combine when need an specific combination.

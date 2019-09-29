@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/src/breakpoint.dart';
 
+/// A callback used when the breakpoint matches with the current size
+typedef ResponsiveBuilderCallback = Widget Function(
+  BuildContext context,
+  List<Widget> children,
+);
+
 /// A widget that render according with
 class ResponsiveBuilder extends StatelessWidget {
   ResponsiveBuilder({
     @required
     this.breakpoints,
+    @required
+    this.builders,
     this.children,
     this.defaultBreakpoint,
-  }) : assert(breakpoints.isNotEmpty);
+  })
+    : assert(breakpoints.isNotEmpty),
+      assert(builders.isNotEmpty),
+      assert(builders.length == breakpoints.length);
 
   /// Define a list of [ResponsiveBreakpoint] which defines when should display new layout
   final List<ResponsiveBreakpoint> breakpoints;
@@ -20,26 +31,34 @@ class ResponsiveBuilder extends StatelessWidget {
   /// If possible prefer use it instead create all render tree on builder
   final List<Widget> children;
 
+  /// The builder, responsible to render the
+  final List<ResponsiveBuilderCallback> builders;
+
   /// Gets the fallback breakpoint when not found any match
-  get _fallbackBreakpoint => defaultBreakpoint ?? breakpoints.first;
+  ResponsiveBuilderCallback get _fallbackBreakpoint => defaultBreakpoint ?? builders.first;
 
   @override
   Widget build(BuildContext context) {
-    return LayoutBuilder(
-      builder: (context, constraints) {
-        final currentSize = MediaQuery.of(context).size;
-
-        return currentBreakpoint(currentSize).builder(context, constraints, children);
-      }
+    return OrientationBuilder(
+      builder: (context, orientation) =>
+        getBuilder(
+          size: MediaQuery.of(context).size,
+          orientation: orientation,
+        )(context, children),
     );
   }
 
   /// Looks for match breakpoints if not use fallback breakpoint
-  ResponsiveBreakpoint currentBreakpoint(Size size) {
+  ResponsiveBuilderCallback getBuilder({Size size, Orientation orientation}) {
     try {
-      return breakpoints.firstWhere((breakpoint) =>
-        breakpoint.hasMatchWithSize(size)
+      final builderIndex = breakpoints.indexWhere((breakpoint) =>
+        breakpoint.itMatchesWith(
+          size: size,
+          currentOrientation: orientation,
+        )
       );
+
+      return builders[builderIndex];
     } catch (_) {
       return _fallbackBreakpoint;
     }
