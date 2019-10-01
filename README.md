@@ -4,25 +4,24 @@ A Kind of CSS way to define breakpoints in your Flutter layout
 
 ## Propose
 This project has been built thinking an easy and less verbose possible way to get the breakpoints defined in CSS on Flutter.
-With this project you can define sizes, which your app will rebuild the view to get the most responsible layout for current size 
+With this project you can define sizes, which your app will rebuild the view to get the most responsible layout for the current size 
 
 **basic example** 
 
 ![Portrait -> Landscape](/example-preview.png?raw=true "Portrait to landscape")
 
 ## Why
-Design responsive layouts it shouldn't be hard! Specially for who come from web, which there is easiest way: defining CSS breakpoints.
-Flutter provide to us an Widget which rebuild when we have changes on layout size, btw, It was a little painful, to create internal if on render view, its look dirty, I think this is to much responsible too one file and is not reusable.
+Design responsive layouts it shouldn't be hard! Especially for who come from the web, which there is easiest way: defining CSS breakpoints.
+Flutter provides us a Widget which rebuild when we have changes on layout size, btw, It was a little painful, to create internal if on render view, its look dirty, I think this is too much responsible to one file and is not reusable.
 Because of it, I created this package, one where you can:
 
-- Different looks according with current size of screen
+- Different looks according to the current size of the screen
 - Reuse your breakpoints
 - Don't dirty your views with conditional size logic
 
 ## Getting Started
 
-Since this project it wasn't published on Pub (yet!), you should use in your project by adding the dependency on pubspec.yml referring the Github package
-
+Since this project it wasn't published in Pub (yet!), you should use in your project by adding the dependency on pubspec.yaml referring the Github package
 ```yaml
 dependencies:
   # ...
@@ -31,7 +30,7 @@ dependencies:
 ```
 
 ## How to use
-1. Import the package where you'll need to rebuild your widget according with breakpoint
+1. Import the package where you'll need to rebuild your widget according to with breakpoint
 2. (Optional) Use children prop to reuse the common Widget that exists between the layouts
 3. Define the list of breakpoints
 4. Define **in same order** the responsible builder for each breakpoint defined before
@@ -71,6 +70,6 @@ Currently, these are the constructors available to make your layout responsible
 | `ResponsiveBreakpoint.byMinHeight();` | Rebuild when screen have the minimum height specified | 
 | `ResponsiveBreakpoint.byMinWidth();` | Rebuild when screen have the minimum width specified |
 | `ResponsiveBreakpoint.byMaxHeight();` | Rebuild when screen have the maximum height specified | 
-| `ResponsiveBreakpoint.byManWidth();` | Rebuild when screen have the maximum width specified |
+| `ResponsiveBreakpoint.byMinWidth();` | Rebuild when screen have the minimum width specified |
 
-Or use `ResponsiveBreakpoint()` to combine when need an specific combination.
+Or use `ResponsiveBreakpoint()` to combine when need a specific combination.

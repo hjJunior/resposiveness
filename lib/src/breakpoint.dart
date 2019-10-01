@@ -44,7 +44,7 @@ class ResponsiveBreakpoint {
   final num minHeight;
   final Orientation orientation;
 
-  /// Useful when you wants use this class independently of ResponsiveBuilder
+  /// Useful when you want to use this class independently of ResponsiveBuilder
   bool itMatchesWith({Size size, Orientation currentOrientation}) =>
     size.height >= (minHeight ?? size.height) &&
     size.width >= (minWidth ?? size.width) &&

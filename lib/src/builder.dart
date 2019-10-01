@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/src/breakpoint.dart';
 
-/// A callback used when the breakpoint matches with the current size
+  /// A callback used when the breakpoint matches with the current size
 typedef ResponsiveBuilderCallback = Widget Function(
   BuildContext context,
   List<Widget> children,
@@ -28,7 +28,7 @@ class ResponsiveBuilder extends StatelessWidget {
   final ResponsiveBreakpoint defaultBreakpoint;
 
   /// (Optional) a list of children to be passed to the builder method
-  /// If possible prefer use it instead create all render tree on builder
+  /// If possible prefer to use it instead of creating all render tree on builder
   final List<Widget> children;
 
   /// The builder, responsible to render the
