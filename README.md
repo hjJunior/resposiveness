@@ -71,6 +71,6 @@ Currently, these are the constructors available to make your layout responsible.
 | `ResponsiveBreakpoint.byMinHeight();` | Rebuild when screen have the minimum height specified | 
 | `ResponsiveBreakpoint.byMinWidth();` | Rebuild when screen have the minimum width specified |
 | `ResponsiveBreakpoint.byMaxHeight();` | Rebuild when screen have the maximum height specified | 
-| `ResponsiveBreakpoint.byManWidth();` | Rebuild when screen have the maximum width specified |
+| `ResponsiveBreakpoint.byMaxWidth();` | Rebuild when screen have the maximum width specified |
 
 Or use `ResponsiveBreakpoint()` to combine if you need a specific combination.
