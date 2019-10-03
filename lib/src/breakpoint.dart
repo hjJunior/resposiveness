@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-/// Defines points to be built the Widget using
+/// Defines the points to be built by the Widget, using:
 /// max width or max height;
 /// min width or min height;
 /// orientation mode;
-/// or both
+/// or both.
 class ResponsiveBreakpoint {
   ResponsiveBreakpoint({
     this.maxWidth,
@@ -44,7 +44,7 @@ class ResponsiveBreakpoint {
   final num minHeight;
   final Orientation orientation;
 
-  /// Useful when you wants use this class independently of ResponsiveBuilder
+  /// Useful when you want to use this class independently of ResponsiveBuilder
   bool itMatchesWith({Size size, Orientation currentOrientation}) =>
     size.height >= (minHeight ?? size.height) &&
     size.width >= (minWidth ?? size.width) &&
