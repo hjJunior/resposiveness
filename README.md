@@ -1,4 +1,5 @@
 # Responsive Builder
+[![Build Status](https://travis-ci.com/hjJunior/Responsive-Builder.svg?branch=master)](https://travis-ci.com/hjJunior/Responsive-Builder)
 
 A CSS way-like to define breakpoints in your Flutter layout.
 
