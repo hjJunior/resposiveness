@@ -15,19 +15,19 @@ class ResponsiveBreakpoint {
   });
 
   /// Defines a breakpoint using [minHeight]
-  factory ResponsiveBreakpoint.byMinHeight({num minHeight}) =>
+  factory ResponsiveBreakpoint.byMinHeight(num minHeight) =>
     ResponsiveBreakpoint(minHeight: minHeight);
 
   /// Defines a breakpoint using [minWidth]
-  factory ResponsiveBreakpoint.byMinWidth({num minWidth}) =>
+  factory ResponsiveBreakpoint.byMinWidth(num minWidth) =>
     ResponsiveBreakpoint(minWidth: minWidth);
 
   /// Defines a breakpoint using [maxHeight]
-  factory ResponsiveBreakpoint.byMaxHeight({num maxHeight}) =>
+  factory ResponsiveBreakpoint.byMaxHeight(num maxHeight) =>
     ResponsiveBreakpoint(maxHeight: maxHeight);
 
   /// Defines a breakpoint using [maxWidth]
-  factory ResponsiveBreakpoint.byMaxWidth({num maxWidth}) =>
+  factory ResponsiveBreakpoint.byMaxWidth(num maxWidth) =>
     ResponsiveBreakpoint(maxWidth: maxWidth);
 
   /// Defines a breakpoint using [orientation] = [Orientation.portrait]
