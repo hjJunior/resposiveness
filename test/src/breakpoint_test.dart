@@ -143,7 +143,7 @@ void main() {
         expect(subject, isTrue);
       });
 
-      test('when all params match screen size and orientation', () {
+      test('when all params do not match screen size and orientation', () {
         final size = Size(4, 11);
         final responsiveBreakpoint =
           ResponsiveBreakpoint(maxWidth: 10, maxHeight: 10, minHeight: 5, minWidth: 5, orientation: Orientation.landscape );
