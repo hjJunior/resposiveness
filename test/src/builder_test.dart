@@ -15,8 +15,8 @@ void main() {
         child: ResponsiveBuilder(
           breakpoints: [
             ResponsiveBreakpoint(
-              maxWidth: 45,
-              maxHeight: 45,
+              maxWidth: 70,
+              maxHeight: 70,
             ),
             ResponsiveBreakpoint.byPortraitMode(),
             ResponsiveBreakpoint.byLandscapeMode(),
@@ -31,25 +31,36 @@ void main() {
     );
   }
 
-  testWidgets('when media query matches the device custom breakpoint', (tester) async {
-    final testingSize = Size(45, 45);
+  testWidgets('when custom breakpoint', (tester) async {
+    final TestWidgetsFlutterBinding binding =
+        TestWidgetsFlutterBinding.ensureInitialized();
+    final testingSize = Size(50, 50);
+
+    await binding.setSurfaceSize(testingSize);
     await tester.pumpWidget(buildHelperFor(testingSize));
 
     expect(find.text('custom'), findsOneWidget);
   });
 
-   testWidgets('when media query matches the device portrait orientation', (tester) async {
-    final testingSize = Size(50, 100);
+  testWidgets('when portrait orientation', (tester) async {
+    final TestWidgetsFlutterBinding binding =
+        TestWidgetsFlutterBinding.ensureInitialized();
+    final testingSize = Size(200, 400);
+
+    await binding.setSurfaceSize(testingSize);
     await tester.pumpWidget(buildHelperFor(testingSize));
 
     expect(find.text('portrait'), findsOneWidget);
   });
 
-  testWidgets('when media query matches the device landscape orientation', (tester) async {
-    final testingSize = Size(100, 50);
+  testWidgets('when landscape orientation', (tester) async {
+    final TestWidgetsFlutterBinding binding =
+        TestWidgetsFlutterBinding.ensureInitialized();
+    final testingSize = Size(400, 200);
+
+    await binding.setSurfaceSize(testingSize);
     await tester.pumpWidget(buildHelperFor(testingSize));
 
     expect(find.text('landscape'), findsOneWidget);
   });
-
 }
