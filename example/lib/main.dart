@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/responsive_builder.dart';
+import 'package:resposiveness/resposiveness.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,13 +23,13 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Responsive Builder'),
+        title: Text('Resposiveness'),
       ),
       body: Center(
         child: ResponsiveBuilder(
           breakpoints: [
-            ResponsiveBreakpoint.byPortraitMode(),
-            ResponsiveBreakpoint.byLandscapeMode(),
+            ResposivenessBreakpoint.byPortraitMode(),
+            ResposivenessBreakpoint.byLandscapeMode(),
           ],
           children: <Widget>[
             Icon(

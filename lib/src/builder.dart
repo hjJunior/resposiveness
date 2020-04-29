@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_builder/src/breakpoint.dart';
+import 'package:resposiveness/src/breakpoint.dart';
 
 /// A callback used when the breakpoint matches with the current size
 typedef ResponsiveBuilderCallback = Widget Function(
@@ -22,10 +22,10 @@ class ResponsiveBuilder extends StatelessWidget {
       assert(builders.length == breakpoints.length);
 
   /// Define a list of [ResponsiveBreakpoint] which defines when should display a new layout
-  final List<ResponsiveBreakpoint> breakpoints;
+  final List<ResposivenessBreakpoint> breakpoints;
 
   /// (Optional) define a default breakpoint, if it's not setted, it will be used primarily on breakpoints
-  final ResponsiveBreakpoint defaultBreakpoint;
+  final ResposivenessBreakpoint defaultBreakpoint;
 
   /// (Optional) a list of children to be passed to the builder method
   /// If possible, use it instead of create all render tree on builder

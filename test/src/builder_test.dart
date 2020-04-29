@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:responsive_builder/src/builder.dart';
-import 'package:responsive_builder/src/breakpoint.dart';
+import 'package:resposiveness/src/builder.dart';
+import 'package:resposiveness/src/breakpoint.dart';
 
 void main() {
   Widget buildHelperFor(Size size) {
@@ -14,12 +14,12 @@ void main() {
         ),
         child: ResponsiveBuilder(
           breakpoints: [
-            ResponsiveBreakpoint(
+            ResposivenessBreakpoint(
               maxWidth: 70,
               maxHeight: 70,
             ),
-            ResponsiveBreakpoint.byPortraitMode(),
-            ResponsiveBreakpoint.byLandscapeMode(),
+            ResposivenessBreakpoint.byPortraitMode(),
+            ResposivenessBreakpoint.byLandscapeMode(),
           ],
           builders: [
             (_, __) => Text('custom'),

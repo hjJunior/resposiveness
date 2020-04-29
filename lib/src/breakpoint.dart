@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 /// min width or min height;
 /// orientation mode;
 /// or both.
-class ResponsiveBreakpoint {
-  ResponsiveBreakpoint({
+class ResposivenessBreakpoint {
+  ResposivenessBreakpoint({
     this.maxWidth,
     this.maxHeight,
     this.minWidth,
@@ -15,28 +15,28 @@ class ResponsiveBreakpoint {
   });
 
   /// Defines a breakpoint using [minHeight]
-  factory ResponsiveBreakpoint.byMinHeight(num minHeight) =>
-    ResponsiveBreakpoint(minHeight: minHeight);
+  factory ResposivenessBreakpoint.byMinHeight(num minHeight) =>
+    ResposivenessBreakpoint(minHeight: minHeight);
 
   /// Defines a breakpoint using [minWidth]
-  factory ResponsiveBreakpoint.byMinWidth(num minWidth) =>
-    ResponsiveBreakpoint(minWidth: minWidth);
+  factory ResposivenessBreakpoint.byMinWidth(num minWidth) =>
+    ResposivenessBreakpoint(minWidth: minWidth);
 
   /// Defines a breakpoint using [maxHeight]
-  factory ResponsiveBreakpoint.byMaxHeight(num maxHeight) =>
-    ResponsiveBreakpoint(maxHeight: maxHeight);
+  factory ResposivenessBreakpoint.byMaxHeight(num maxHeight) =>
+    ResposivenessBreakpoint(maxHeight: maxHeight);
 
   /// Defines a breakpoint using [maxWidth]
-  factory ResponsiveBreakpoint.byMaxWidth(num maxWidth) =>
-    ResponsiveBreakpoint(maxWidth: maxWidth);
+  factory ResposivenessBreakpoint.byMaxWidth(num maxWidth) =>
+    ResposivenessBreakpoint(maxWidth: maxWidth);
 
   /// Defines a breakpoint using [orientation] = [Orientation.portrait]
-  factory ResponsiveBreakpoint.byPortraitMode() =>
-    ResponsiveBreakpoint(orientation: Orientation.portrait);
+  factory ResposivenessBreakpoint.byPortraitMode() =>
+    ResposivenessBreakpoint(orientation: Orientation.portrait);
 
   /// Defines a breakpoint using [orientation] = [Orientation.landscape]
-  factory ResponsiveBreakpoint.byLandscapeMode() =>
-    ResponsiveBreakpoint(orientation: Orientation.landscape);
+  factory ResposivenessBreakpoint.byLandscapeMode() =>
+    ResposivenessBreakpoint(orientation: Orientation.landscape);
 
   final num maxWidth;
   final num maxHeight;

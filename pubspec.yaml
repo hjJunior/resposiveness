@@ -1,5 +1,5 @@
-name: responsive_builder
-description: A responsive builder for your projects in specially designed to be closest on web way, defining the breakpoints
+name: resposiveness
+description: Bring the breakpoints from CSS to Flutter
 version: 0.0.1
 author: Helio S. Junior <hj_junior@hotmail.com>
 homepage: hjjunior.dev
