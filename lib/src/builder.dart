@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:resposiveness/src/breakpoint.dart';
 
 /// A callback used when the breakpoint matches with the current size
-typedef ResponsiveBuilderCallback = Widget Function(
+typedef ResposivenessBuilder = Widget Function(
   BuildContext context,
   List<Widget> children,
 );
 
 /// A widget that renders according with the breakpoint list
-class ResponsiveBuilder extends StatelessWidget {
-  ResponsiveBuilder({
+class ResposivenessWidget extends StatelessWidget {
+  ResposivenessWidget.builder({
     @required
     this.breakpoints,
     @required
@@ -34,10 +34,10 @@ class ResponsiveBuilder extends StatelessWidget {
   /// The builder, responsible to render the Widgets according to the breakpoints
   /// (The [builders] list must have the same size of the [breakpoints] list)
   /// (And the most important: the [builders] list have to match the same index of [breakpoints] list)
-  final List<ResponsiveBuilderCallback> builders;
+  final List<ResposivenessBuilder> builders;
 
   /// Gets the fallback breakpoint when it doesn't find any match
-  ResponsiveBuilderCallback get _fallbackBreakpoint => defaultBreakpoint ?? builders.first;
+  ResposivenessBuilder get _fallbackBreakpoint => defaultBreakpoint ?? builders.first;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +51,7 @@ class ResponsiveBuilder extends StatelessWidget {
   }
 
   /// Looks for match breakpoints, if not, use the fallback breakpoint
-  ResponsiveBuilderCallback getBuilder({Size size, Orientation orientation}) {
+  ResposivenessBuilder getBuilder({Size size, Orientation orientation}) {
     try {
       final builderIndex = breakpoints.indexWhere((breakpoint) =>
         breakpoint.itMatchesWith(

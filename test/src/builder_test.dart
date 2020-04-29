@@ -12,7 +12,7 @@ void main() {
         data: MediaQueryData(
           size: size,
         ),
-        child: ResponsiveBuilder(
+        child: ResposivenessWidget.builder(
           breakpoints: [
             ResposivenessBreakpoint(
               maxWidth: 70,

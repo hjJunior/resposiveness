@@ -26,7 +26,7 @@ class MyHomePage extends StatelessWidget {
         title: Text('Resposiveness'),
       ),
       body: Center(
-        child: ResponsiveBuilder(
+        child: ResposivenessWidget.builder(
           breakpoints: [
             ResposivenessBreakpoint.byPortraitMode(),
             ResposivenessBreakpoint.byLandscapeMode(),
