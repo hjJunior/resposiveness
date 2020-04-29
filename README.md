@@ -1,7 +1,7 @@
-# Responsive Builder
-[![Build Status](https://travis-ci.com/hjJunior/Responsive-Builder.svg?branch=master)](https://travis-ci.com/hjJunior/Responsive-Builder)
+#  Resposiveness
+[Demo](https://hjjunior.github.io/resposiveness/#/)
 
-[Demo](https://hjjunior.github.io/Responsive-Builder/#/)
+[![Build Status](https://travis-ci.com/hjJunior/resposiveness.svg?branch=master)](https://travis-ci.com/hjJunior/resposiveness)
 
 A CSS way-like to define breakpoints in your Flutter layout.
 
@@ -9,7 +9,7 @@ A CSS way-like to define breakpoints in your Flutter layout.
 This project has been built thinking to an easy and less verbose possible way to get the breakpoints defined in CSS on Flutter.
 With this project you can define sizes, which will be rebuilded in your app, on the view, to get the most responsible layout for current size.
 
-**basic example** 
+**Basic example** 
 
 ![Portrait -> Landscape](/example-preview.png?raw=true "Portrait to landscape")
 
@@ -29,8 +29,8 @@ Since this project wasn't published on Pub (yet!), you should use in your projec
 ```yaml
 dependencies:
   # ...
-  responsive_builder:
-    git: https://github.com/hjJunior/responsive-builder.dart
+  resposiveness:
+    git: https://github.com/hjJunior/resposiveness.dart
 ```
 
 ## How to use
@@ -45,15 +45,15 @@ import 'package:responsive_builder/responsive_builder.dart';
 class Example extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ResponsiveBuilder(
+    return ResposivenessWidget.builder(
       children: <Widget>[
         Text('Text 1'),
         Text('Text 2'),
         Text('Text 3'),
       ],
       breakpoints: [
-        ResponsiveBreakpoint.byPortraitMode(), // index: 0
-        ResponsiveBreakpoint.byLandscapeMode(), // index: 1
+        ResposivenessBreakpoint.byPortraitMode(), // index: 0
+        ResposivenessBreakpoint.byLandscapeMode(), // index: 1
       ],
       builders: [
         (context, children) => Column(children: children,), // index 0: portrait
@@ -69,11 +69,11 @@ Currently, these are the constructors available to make your layout responsible.
 
 | Method | Description |
 |--|--|
-| `ResponsiveBreakpoint.byPortraitMode();` | Rebuild when device is on portrait mode |
-| `ResponsiveBreakpoint.byLandscapeMode();` | Rebuild when device is on landscape mode |
-| `ResponsiveBreakpoint.byMinHeight();` | Rebuild when screen have the minimum height specified | 
-| `ResponsiveBreakpoint.byMinWidth();` | Rebuild when screen have the minimum width specified |
-| `ResponsiveBreakpoint.byMaxHeight();` | Rebuild when screen have the maximum height specified | 
-| `ResponsiveBreakpoint.byMaxWidth();` | Rebuild when screen have the maximum width specified |
+| `ResposivenessBreakpoint.byPortraitMode();` | Rebuild when device is on portrait mode |
+| `ResposivenessBreakpoint.byLandscapeMode();` | Rebuild when device is on landscape mode |
+| `ResposivenessBreakpoint.byMinHeight();` | Rebuild when screen have the minimum height specified | 
+| `ResposivenessBreakpoint.byMinWidth();` | Rebuild when screen have the minimum width specified |
+| `ResposivenessBreakpoint.byMaxHeight();` | Rebuild when screen have the maximum height specified | 
+| `ResposivenessBreakpoint.byMaxWidth();` | Rebuild when screen have the maximum width specified |
 
-Or use `ResponsiveBreakpoint()` to combine if you need a specific combination.
+Or use `ResposivenessBreakpoint()` to combine if you need a specific combination.
